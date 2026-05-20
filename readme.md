@@ -5,7 +5,6 @@
 [![Laravel](https://img.shields.io/badge/Laravel-12-red)](https://laravel.com)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3-green)](https://vuejs.org)
 [![PHP](https://img.shields.io/badge/PHP-8.2+-blue)](https://php.net)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## 🎯 Project Overview
 
