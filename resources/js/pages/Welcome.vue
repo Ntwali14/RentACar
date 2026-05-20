@@ -4,6 +4,7 @@ import HomeLayout from '@/layouts/HomeLayout.vue';
 import { Head, usePage } from '@inertiajs/vue3';
 import { fleet } from '@/routes';
 import { about } from '@/routes';
+import { computed } from 'vue';
 
 interface Car {
     id: number;
@@ -22,14 +23,18 @@ interface Car {
 
 const $page = usePage();
 const homeCars = $page.props.homeCars as Car[];
+
+const appName = computed(() => {
+    return import.meta.env.VITE_APP_NAME || 'RentACar';
+});
 </script>
 
 <template>
     <Head>
-        <title>Real Rent Car - Premium Car Rental Service</title>
+        <title>{{ appName }} - Premium Car Rental Service</title>
         <meta
             name="description"
-            content="Real Rent Car is a premium car rental platform providing reliable transportation solutions. We offer a wide range of cars for rent, from economy to luxury, for short and long term rentals."
+            :content="`${appName} is a premium car rental platform providing reliable transportation solutions. We offer a wide range of cars for rent, from economy to luxury, for short and long term rentals.`"
         />
     </Head>
 
@@ -258,7 +263,7 @@ const homeCars = $page.props.homeCars as Car[];
                             <span
                                 class="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"
                             >
-                                RealRent </span
+                                RentACar</span
                             >?
                         </h2>
                         <p class="mx-auto max-w-2xl text-xl text-gray-600">

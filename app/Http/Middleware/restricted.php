@@ -10,11 +10,12 @@ class restricted
 {
     /**
      * Handle an incoming request.
+     * Allows all authenticated users to access settings pages.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return redirect()->to('/');
+        return $next($request);
     }
 }

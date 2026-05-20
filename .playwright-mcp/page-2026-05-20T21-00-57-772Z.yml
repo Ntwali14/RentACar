@@ -1,0 +1,321 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]:
+        - img "logo" [ref=e8]
+        - paragraph [ref=e9]: RentACar
+      - generic [ref=e10]:
+        - link "Home" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - link "Fleet" [ref=e12] [cursor=pointer]:
+          - /url: /fleet
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+      - link "Dashboard" [ref=e16] [cursor=pointer]:
+        - /url: /client/reservations
+        - img [ref=e17]
+        - text: Dashboard
+  - generic [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - textbox "Search by make, model, or features..." [ref=e27]
+          - img [ref=e28]
+        - button "Search Fleet" [ref=e30]
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: Vehicle Make
+          - combobox [ref=e35]:
+            - option "All Makes" [selected]
+            - option "Audi"
+            - option "Chevrolet"
+            - option "Fiat"
+            - option "Ford"
+            - option "GMC"
+            - option "Honda"
+            - option "Hyundai"
+            - option "Kia"
+            - option "Mercedes-Benz"
+            - option "Porsche"
+            - option "Subaru"
+            - option "Tesla"
+            - option "Toyota"
+            - option "Volkswagen"
+            - option "Volvo"
+        - generic [ref=e36]:
+          - generic [ref=e37]: Fuel Type
+          - combobox [ref=e38]:
+            - option "All Fuel Types" [selected]
+            - option "Gasoline"
+            - option "Electric"
+        - generic [ref=e39]:
+          - generic [ref=e40]: Model Year
+          - combobox [ref=e41]:
+            - option "All Years" [selected]
+            - option "2020"
+            - option "2021"
+            - option "2019"
+            - option "2022"
+        - generic [ref=e42]:
+          - generic [ref=e43]: Daily Rate Range
+          - generic [ref=e44]:
+            - generic [ref=e45]:
+              - generic [ref=e46]: $
+              - spinbutton [ref=e47]
+            - generic [ref=e48]:
+              - generic [ref=e49]: $
+              - spinbutton [ref=e50]
+      - generic [ref=e51]:
+        - button "Apply Filters" [ref=e52]
+        - button "Clear All Filters" [ref=e53]
+    - generic [ref=e54]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - heading "17 Premium Vehicles Available" [level=2] [ref=e58]
+          - paragraph [ref=e59]: Showing 1 - 10 results
+        - generic [ref=e60]:
+          - generic [ref=e61]: Page 1 of 2
+          - generic [ref=e63]: 10 shown
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - img "Audi Q5" [ref=e67]
+            - generic [ref=e68]: $85.00/day
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - heading "Audi Q5 - 2020 - 2" [level=3] [ref=e72]
+              - generic [ref=e73]:
+                - generic [ref=e74]:
+                  - img [ref=e75]
+                  - generic [ref=e77]: gasoline
+                - paragraph [ref=e79]: GPS included
+                - paragraph [ref=e81]: Insurance included
+            - paragraph [ref=e82]: Compact luxury SUV with all-wheel drive and spacious interior.
+          - button "Book Now" [ref=e84] [cursor=pointer]:
+            - generic [ref=e85]:
+              - img [ref=e86]
+              - text: Book Now
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - img "Chevrolet Camaro" [ref=e90]
+            - generic [ref=e91]: $95.00/day
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - heading "Chevrolet Camaro - 2021 - 4" [level=3] [ref=e95]
+              - generic [ref=e96]:
+                - generic [ref=e97]:
+                  - img [ref=e98]
+                  - generic [ref=e100]: gasoline
+                - paragraph [ref=e102]: GPS included
+                - paragraph [ref=e104]: Insurance included
+            - paragraph [ref=e105]: Powerful sports car with aggressive styling and thrilling performance.
+          - button "Book Now" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]:
+              - img [ref=e109]
+              - text: Book Now
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - img "Chevrolet Malibu" [ref=e113]
+            - generic [ref=e114]: $55.00/day
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - heading "Chevrolet Malibu - 2020 - 5" [level=3] [ref=e118]
+              - generic [ref=e119]:
+                - generic [ref=e120]:
+                  - img [ref=e121]
+                  - generic [ref=e123]: gasoline
+                - paragraph [ref=e125]: GPS included
+                - paragraph [ref=e127]: Insurance included
+            - paragraph [ref=e128]: Mid-size sedan offering comfort and fuel efficiency.
+          - button "Book Now" [ref=e130] [cursor=pointer]:
+            - generic [ref=e131]:
+              - img [ref=e132]
+              - text: Book Now
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - img "Fiat 500" [ref=e136]
+            - generic [ref=e137]: $40.00/day
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - heading "Fiat 500 - 2019 - 7" [level=3] [ref=e141]
+              - generic [ref=e142]:
+                - generic [ref=e143]:
+                  - img [ref=e144]
+                  - generic [ref=e146]: gasoline
+                - paragraph [ref=e148]: GPS included
+                - paragraph [ref=e150]: Insurance included
+            - paragraph [ref=e151]: Compact city car perfect for urban driving and parking.
+          - button "Book Now" [ref=e153] [cursor=pointer]:
+            - generic [ref=e154]:
+              - img [ref=e155]
+              - text: Book Now
+        - generic [ref=e157]:
+          - generic [ref=e158]:
+            - img "Ford Focus" [ref=e159]
+            - generic [ref=e160]: $50.00/day
+          - generic [ref=e162]:
+            - generic [ref=e163]:
+              - heading "Ford Focus - 2019 - 9" [level=3] [ref=e164]
+              - generic [ref=e165]:
+                - generic [ref=e166]:
+                  - img [ref=e167]
+                  - generic [ref=e169]: gasoline
+                - paragraph [ref=e171]: GPS included
+                - paragraph [ref=e173]: Insurance included
+            - paragraph [ref=e174]: Reliable compact car with good fuel economy.
+          - button "Book Now" [ref=e176] [cursor=pointer]:
+            - generic [ref=e177]:
+              - img [ref=e178]
+              - text: Book Now
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - img "Ford Mustang" [ref=e182]
+            - generic [ref=e183]: $100.00/day
+          - generic [ref=e185]:
+            - generic [ref=e186]:
+              - heading "Ford Mustang - 2022 - 10" [level=3] [ref=e187]
+              - generic [ref=e188]:
+                - generic [ref=e189]:
+                  - img [ref=e190]
+                  - generic [ref=e192]: gasoline
+                - paragraph [ref=e194]: GPS included
+                - paragraph [ref=e196]: Insurance included
+            - paragraph [ref=e197]: Iconic American muscle car with powerful V8 engine.
+          - button "Book Now" [ref=e199] [cursor=pointer]:
+            - generic [ref=e200]:
+              - img [ref=e201]
+              - text: Book Now
+        - generic [ref=e203]:
+          - generic [ref=e204]:
+            - img "GMC Sierra_1500" [ref=e205]
+            - generic [ref=e206]: $90.00/day
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - heading "GMC Sierra_1500 - 2021 - 11" [level=3] [ref=e210]
+              - generic [ref=e211]:
+                - generic [ref=e212]:
+                  - img [ref=e213]
+                  - generic [ref=e215]: gasoline
+                - paragraph [ref=e217]: GPS included
+                - paragraph [ref=e219]: Insurance included
+            - paragraph [ref=e220]: Full-size pickup truck with impressive towing capacity.
+          - button "Book Now" [ref=e222] [cursor=pointer]:
+            - generic [ref=e223]:
+              - img [ref=e224]
+              - text: Book Now
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - img "Honda Civic" [ref=e228]
+            - generic [ref=e229]: $55.00/day
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - heading "Honda Civic - 2021 - 12" [level=3] [ref=e233]
+              - generic [ref=e234]:
+                - generic [ref=e235]:
+                  - img [ref=e236]
+                  - generic [ref=e238]: gasoline
+                - paragraph [ref=e240]: GPS included
+                - paragraph [ref=e242]: Insurance included
+            - paragraph [ref=e243]: Compact sedan known for reliability and fuel efficiency.
+          - button "Book Now" [ref=e245] [cursor=pointer]:
+            - generic [ref=e246]:
+              - img [ref=e247]
+              - text: Book Now
+        - generic [ref=e249]:
+          - generic [ref=e250]:
+            - img "Hyundai Tucson" [ref=e251]
+            - generic [ref=e252]: $70.00/day
+          - generic [ref=e254]:
+            - generic [ref=e255]:
+              - heading "Hyundai Tucson - 2021 - 14" [level=3] [ref=e256]
+              - generic [ref=e257]:
+                - generic [ref=e258]:
+                  - img [ref=e259]
+                  - generic [ref=e261]: gasoline
+                - paragraph [ref=e263]: GPS included
+                - paragraph [ref=e265]: Insurance included
+            - paragraph [ref=e266]: Compact SUV with bold styling and comprehensive warranty.
+          - button "Book Now" [ref=e268] [cursor=pointer]:
+            - generic [ref=e269]:
+              - img [ref=e270]
+              - text: Book Now
+        - generic [ref=e272]:
+          - generic [ref=e273]:
+            - img "Kia Optima" [ref=e274]
+            - generic [ref=e275]: $58.00/day
+          - generic [ref=e277]:
+            - generic [ref=e278]:
+              - heading "Kia Optima - 2020 - 17" [level=3] [ref=e279]
+              - generic [ref=e280]:
+                - generic [ref=e281]:
+                  - img [ref=e282]
+                  - generic [ref=e284]: gasoline
+                - paragraph [ref=e286]: GPS included
+                - paragraph [ref=e288]: Insurance included
+            - paragraph [ref=e289]: Mid-size sedan with sporty design and value pricing.
+          - button "Book Now" [ref=e291] [cursor=pointer]:
+            - generic [ref=e292]:
+              - img [ref=e293]
+              - text: Book Now
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - button "« Previous" [disabled] [ref=e298]
+          - button "1" [ref=e299]
+          - button "2" [ref=e300]
+          - button "Next »" [ref=e301]
+        - generic [ref=e302]: Showing 1 to 10 of 17 results
+  - contentinfo [ref=e303]:
+    - generic [ref=e304]:
+      - generic [ref=e305]:
+        - generic [ref=e306]:
+          - generic [ref=e307]:
+            - img [ref=e309]
+            - generic [ref=e311]:
+              - heading "RentACar" [level=3] [ref=e312]
+              - paragraph [ref=e313]: PREMIUM CARS
+          - paragraph [ref=e314]: Premium car rental service providing luxury and reliable vehicles for all your transportation needs with exceptional customer service.
+        - generic [ref=e315]:
+          - heading "Services" [level=4] [ref=e316]
+          - list [ref=e317]:
+            - listitem [ref=e318]:
+              - link "Luxury Car Rental" [ref=e319] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e320]:
+              - link "Long Term Rental" [ref=e321] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e322]:
+              - link "Corporate Solutions" [ref=e323] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e324]:
+              - link "Airport Transfers" [ref=e325] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e326]:
+          - heading "Support" [level=4] [ref=e327]
+          - list [ref=e328]:
+            - listitem [ref=e329]:
+              - link "Contact Us" [ref=e330] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e331]:
+              - link "Help Center" [ref=e332] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e333]:
+              - link "Terms & Conditions" [ref=e334] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e335]:
+              - link "Privacy Policy" [ref=e336] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e337]:
+          - heading "Contact Info" [level=4] [ref=e338]
+          - generic [ref=e339]:
+            - generic [ref=e340]:
+              - img [ref=e341]
+              - generic [ref=e343]: +1 (555) 123-4567
+            - generic [ref=e344]:
+              - img [ref=e345]
+              - generic [ref=e347]: hello@realrent.com
+            - generic [ref=e348]:
+              - img [ref=e349]
+              - generic [ref=e352]: 123 Business Ave, City
+      - paragraph [ref=e354]: © 2025 RentACar. All rights reserved.

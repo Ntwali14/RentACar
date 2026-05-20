@@ -1,0 +1,22 @@
+- generic [ref=e6]:
+  - generic [ref=e7]:
+    - img [ref=e9]
+    - heading "Administrative Access" [level=1] [ref=e11]
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: Administrator Email
+      - textbox "Administrator Email" [active] [ref=e16]:
+        - /placeholder: admin@domain.com
+    - generic [ref=e17]:
+      - generic [ref=e20]:
+        - img [ref=e21]
+        - generic [ref=e24]: Secure Password
+      - textbox "Secure Password" [ref=e25]:
+        - /placeholder: Enter secure password
+    - button "Access System" [ref=e26] [cursor=pointer]
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - img [ref=e29]
+        - paragraph [ref=e31]: Secure connection established
+      - paragraph [ref=e32]: All administrative actions are logged and monitored
+  - paragraph [ref=e36]: Unauthorized access is strictly prohibited

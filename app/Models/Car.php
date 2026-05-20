@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\CarColor;
 use App\Enums\CarStatus;
+use App\Enums\ConditionStatus;
 use App\Enums\FuelType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -27,6 +28,7 @@ class Car extends Model
         'model',
         'year',
         'license_plate',
+        'vin',
         'color',
         'price_per_day',
         'mileage',
@@ -35,6 +37,7 @@ class Car extends Model
         'fuel_type',
         'description',
         'status',
+        'current_condition_status',
     ];
 
     /**
@@ -48,6 +51,7 @@ class Car extends Model
         'mileage' => 'integer',
         'seats' => 'integer',
         'status' => CarStatus::class,
+        'current_condition_status' => ConditionStatus::class,
         'fuel_type' => FuelType::class,
         'color' => CarColor::class,
         'created_at' => 'datetime',
@@ -124,6 +128,22 @@ class Car extends Model
     public function reservations(): HasMany
     {
         return $this->hasMany(Reservation::class);
+    }
+
+    /**
+     * Get the inspections for the car.
+     */
+    public function inspections(): HasMany
+    {
+        return $this->hasMany(VehicleInspection::class);
+    }
+
+    /**
+     * Get the damage reports for the car.
+     */
+    public function damageReports(): HasMany
+    {
+        return $this->hasMany(DamageReport::class);
     }
 
     /**

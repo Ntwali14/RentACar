@@ -7,10 +7,19 @@ use App\Models\Car;
 use App\Models\Payment;
 use App\Models\Reservation;
 use App\Models\User;
+use App\Models\VehicleInspection;
+use App\Models\DamageReport;
+use App\Models\Dispute;
 use App\Enums\CarStatus;
 use App\Enums\PaymentStatus;
 use App\Enums\ReservationStatus;
 use App\Enums\UserRole;
+use App\Enums\ConditionStatus;
+use App\Enums\InspectionType;
+use App\Enums\InspectionStatus;
+use App\Enums\DamageReportStatus;
+use App\Enums\CustomerLiabilityStatus;
+use App\Enums\DisputeStatus;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +42,253 @@ class ReportsController extends Controller
         ];
 
         return inertia('Admin/Reports/Index', $data);
+    }
+
+    public function reservations(Request $request)
+    {
+        $query = Reservation::with(['user', 'car', 'approver', 'payments'])
+            ->orderBy('created_at', 'desc');
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->get('status'));
+        }
+
+        if ($request->filled('search')) {
+            $search = $request->get('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('reservation_number', 'like', "%{$search}%")
+                    ->orWhereHas('user', function ($uq) use ($search) {
+                        $uq->where('name', 'like', "%{$search}%")
+                            ->orWhere('email', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        if ($request->filled('start_date')) {
+            $query->whereDate('start_date', '>=', $request->get('start_date'));
+        }
+
+        if ($request->filled('end_date')) {
+            $query->whereDate('end_date', '<=', $request->get('end_date'));
+        }
+
+        $reservations = $query->paginate(20);
+
+        return inertia('Admin/Reports/Reservations', [
+            'reservations' => $reservations,
+            'statuses' => ReservationStatus::cases(),
+            'filters' => [
+                'status' => $request->get('status'),
+                'search' => $request->get('search'),
+                'start_date' => $request->get('start_date'),
+                'end_date' => $request->get('end_date'),
+            ]
+        ]);
+    }
+
+    public function vehicleConditionHistory(Request $request)
+    {
+        $query = Car::with(['inspections' => function ($q) {
+            $q->orderBy('inspection_date', 'desc')->limit(2);
+        }, 'damageReports'])
+            ->orderBy('license_plate');
+
+        if ($request->filled('status')) {
+            $query->where('current_condition_status', $request->get('status'));
+        }
+
+        $cars = $query->get()->map(function ($car) {
+            $pickupInspections = VehicleInspection::where('car_id', $car->id)
+                ->where('inspection_type', 'pickup')
+                ->orderBy('inspection_date', 'desc')
+                ->limit(1)
+                ->get();
+
+            $returnInspections = VehicleInspection::where('car_id', $car->id)
+                ->where('inspection_type', 'return')
+                ->orderBy('inspection_date', 'desc')
+                ->limit(1)
+                ->get();
+
+            return [
+                'id' => $car->id,
+                'make' => $car->make,
+                'model' => $car->model,
+                'license_plate' => $car->license_plate,
+                'status' => $car->status->label(),
+                'condition_status' => $car->current_condition_status?->label() ?? 'Unknown',
+                'total_inspections' => VehicleInspection::where('car_id', $car->id)->count(),
+                'last_pickup_inspection' => $pickupInspections->first()?->inspection_date?->format('Y-m-d H:i'),
+                'last_return_inspection' => $returnInspections->first()?->inspection_date?->format('Y-m-d H:i'),
+                'damage_reports_count' => $car->damageReports()->count(),
+                'created_at' => $car->created_at->format('Y-m-d'),
+            ];
+        });
+
+        return inertia('Admin/Reports/VehicleConditionHistory', [
+            'vehicles' => $cars,
+            'conditionStatuses' => ConditionStatus::cases(),
+            'filters' => [
+                'status' => $request->get('status'),
+            ]
+        ]);
+    }
+
+    public function inspections(Request $request)
+    {
+        $query = VehicleInspection::with(['car', 'reservation', 'inspectedBy', 'evidence'])
+            ->orderBy('inspection_date', 'desc');
+
+        if ($request->filled('inspection_type')) {
+            $query->where('inspection_type', $request->get('inspection_type'));
+        }
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->get('status'));
+        }
+
+        if ($request->filled('car_id')) {
+            $query->where('car_id', $request->get('car_id'));
+        }
+
+        if ($request->filled('start_date')) {
+            $query->whereDate('inspection_date', '>=', $request->get('start_date'));
+        }
+
+        if ($request->filled('end_date')) {
+            $query->whereDate('inspection_date', '<=', $request->get('end_date'));
+        }
+
+        $inspections = $query->paginate(20);
+
+        return inertia('Admin/Reports/Inspections', [
+            'inspections' => $inspections,
+            'inspectionTypes' => InspectionType::cases(),
+            'inspectionStatuses' => InspectionStatus::cases(),
+            'cars' => Car::orderBy('license_plate')->get(['id', 'license_plate', 'make', 'model']),
+            'filters' => [
+                'inspection_type' => $request->get('inspection_type'),
+                'status' => $request->get('status'),
+                'car_id' => $request->get('car_id'),
+                'start_date' => $request->get('start_date'),
+                'end_date' => $request->get('end_date'),
+            ]
+        ]);
+    }
+
+    public function damageReports(Request $request)
+    {
+        $query = DamageReport::with(['car', 'reservation', 'reportedBy', 'disputes'])
+            ->orderBy('created_at', 'desc');
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->get('status'));
+        }
+
+        if ($request->filled('liability_status')) {
+            $query->where('customer_liability_status', $request->get('liability_status'));
+        }
+
+        if ($request->filled('car_id')) {
+            $query->where('car_id', $request->get('car_id'));
+        }
+
+        if ($request->filled('start_date')) {
+            $query->whereDate('created_at', '>=', $request->get('start_date'));
+        }
+
+        if ($request->filled('end_date')) {
+            $query->whereDate('created_at', '<=', $request->get('end_date'));
+        }
+
+        $damageReports = $query->paginate(20);
+
+        return inertia('Admin/Reports/DamageReports', [
+            'damageReports' => $damageReports,
+            'statuses' => DamageReportStatus::cases(),
+            'liabilityStatuses' => CustomerLiabilityStatus::cases(),
+            'cars' => Car::orderBy('license_plate')->get(['id', 'license_plate', 'make', 'model']),
+            'filters' => [
+                'status' => $request->get('status'),
+                'liability_status' => $request->get('liability_status'),
+                'car_id' => $request->get('car_id'),
+                'start_date' => $request->get('start_date'),
+                'end_date' => $request->get('end_date'),
+            ]
+        ]);
+    }
+
+    public function disputes(Request $request)
+    {
+        $query = Dispute::with(['reservation', 'damageReport', 'customer', 'admin'])
+            ->orderBy('created_at', 'desc');
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->get('status'));
+        }
+
+        if ($request->filled('search')) {
+            $search = $request->get('search');
+            $query->where(function ($q) use ($search) {
+                $q->whereHas('customer', function ($uq) use ($search) {
+                    $uq->where('name', 'like', "%{$search}%")
+                        ->orWhere('email', 'like', "%{$search}%");
+                });
+            });
+        }
+
+        if ($request->filled('start_date')) {
+            $query->whereDate('created_at', '>=', $request->get('start_date'));
+        }
+
+        if ($request->filled('end_date')) {
+            $query->whereDate('created_at', '<=', $request->get('end_date'));
+        }
+
+        $disputes = $query->paginate(20);
+
+        return inertia('Admin/Reports/Disputes', [
+            'disputes' => $disputes,
+            'statuses' => DisputeStatus::cases(),
+            'filters' => [
+                'status' => $request->get('status'),
+                'search' => $request->get('search'),
+                'start_date' => $request->get('start_date'),
+                'end_date' => $request->get('end_date'),
+            ]
+        ]);
+    }
+
+    public function frequentDamage(Request $request)
+    {
+        $damageData = Car::withCount('damageReports')
+            ->with('damageReports')
+            ->having('damage_reports_count', '>', 0)
+            ->orderBy('damage_reports_count', 'desc')
+            ->get()
+            ->map(function ($car) {
+                $disputes = Dispute::whereHas('damageReport', function ($q) use ($car) {
+                    $q->where('car_id', $car->id);
+                })->count();
+
+                $latestDamage = $car->damageReports()->latest()->first();
+
+                return [
+                    'id' => $car->id,
+                    'make' => $car->make,
+                    'model' => $car->model,
+                    'license_plate' => $car->license_plate,
+                    'status' => $car->status->label(),
+                    'damage_reports_count' => $car->damage_reports_count,
+                    'disputes_count' => $disputes,
+                    'latest_damage_date' => $latestDamage?->created_at?->format('Y-m-d'),
+                    'estimated_total_cost' => $car->damageReports()->sum('estimated_cost'),
+                ];
+            });
+
+        return inertia('Admin/Reports/FrequentDamage', [
+            'vehicles' => $damageData,
+        ]);
     }
 
     private function getDateRange(string $period): array

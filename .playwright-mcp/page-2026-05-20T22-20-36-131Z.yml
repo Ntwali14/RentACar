@@ -1,0 +1,105 @@
+- generic [ref=e275]:
+  - banner [ref=e276]:
+    - navigation [ref=e278]:
+      - generic [ref=e279]:
+        - img "logo" [ref=e280]
+        - paragraph [ref=e281]: RentACar
+      - generic [ref=e282]:
+        - link "Home" [ref=e283] [cursor=pointer]:
+          - /url: /
+        - link "Fleet" [ref=e284] [cursor=pointer]:
+          - /url: /fleet
+        - link "About" [ref=e285] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e286] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e287]:
+        - link "Sign In" [ref=e288] [cursor=pointer]:
+          - /url: /login
+        - link "Get Started" [ref=e289] [cursor=pointer]:
+          - /url: /register
+  - generic [ref=e291]:
+    - generic [ref=e292]:
+      - heading "Create Account" [level=2] [ref=e293]
+      - paragraph [ref=e294]: Join us and start your car rental journey
+    - generic [ref=e296]:
+      - generic [ref=e297]:
+        - generic [ref=e298]: Full Name
+        - textbox "Full Name" [ref=e299]:
+          - /placeholder: Enter your full name
+          - text: Test Customer
+      - generic [ref=e300]:
+        - generic [ref=e301]: Email Address
+        - textbox "Email Address" [ref=e302]:
+          - /placeholder: Enter your email address
+          - text: testcust@example.com
+      - generic [ref=e303]:
+        - generic [ref=e304]: Password
+        - textbox "Password" [ref=e305]:
+          - /placeholder: Create a password
+          - text: TestPass123!
+      - generic [ref=e306]:
+        - generic [ref=e307]: Confirm Password
+        - textbox "Confirm Password" [ref=e308]:
+          - /placeholder: Confirm your password
+          - text: TestPass123!
+      - button "Create Account" [disabled]:
+        - img
+        - text: Create Account
+      - paragraph [ref=e311]:
+        - text: Already have an account?
+        - link "Sign in here" [ref=e312] [cursor=pointer]:
+          - /url: /login
+  - contentinfo [ref=e313]:
+    - generic [ref=e314]:
+      - generic [ref=e315]:
+        - generic [ref=e316]:
+          - generic [ref=e317]:
+            - img [ref=e319]
+            - generic [ref=e321]:
+              - heading "RentACar" [level=3] [ref=e322]
+              - paragraph [ref=e323]: PREMIUM CARS
+          - paragraph [ref=e324]: Premium car rental service providing luxury and reliable vehicles for all your transportation needs with exceptional customer service.
+        - generic [ref=e325]:
+          - heading "Services" [level=4] [ref=e326]
+          - list [ref=e327]:
+            - listitem [ref=e328]:
+              - link "Luxury Car Rental" [ref=e329] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e330]:
+              - link "Long Term Rental" [ref=e331] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e332]:
+              - link "Corporate Solutions" [ref=e333] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e334]:
+              - link "Airport Transfers" [ref=e335] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e336]:
+          - heading "Support" [level=4] [ref=e337]
+          - list [ref=e338]:
+            - listitem [ref=e339]:
+              - link "Contact Us" [ref=e340] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e341]:
+              - link "Help Center" [ref=e342] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e343]:
+              - link "Terms & Conditions" [ref=e344] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e345]:
+              - link "Privacy Policy" [ref=e346] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e347]:
+          - heading "Contact Info" [level=4] [ref=e348]
+          - generic [ref=e349]:
+            - generic [ref=e350]:
+              - img [ref=e351]
+              - generic [ref=e353]: +1 (555) 123-4567
+            - generic [ref=e354]:
+              - img [ref=e355]
+              - generic [ref=e357]: hello@realrent.com
+            - generic [ref=e358]:
+              - img [ref=e359]
+              - generic [ref=e362]: 123 Business Ave, City
+      - paragraph [ref=e364]: © 2025 RentACar. All rights reserved.

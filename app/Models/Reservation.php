@@ -38,6 +38,9 @@ class Reservation extends Model
         'notes',
         'cancellation_reason',
         'cancelled_at',
+        'approved_by',
+        'approved_at',
+        'rejected_at',
     ];
 
     /**
@@ -58,6 +61,8 @@ class Reservation extends Model
         'total_amount' => 'decimal:2',
         'status' => ReservationStatus::class,
         'cancelled_at' => 'datetime',
+        'approved_at' => 'datetime',
+        'rejected_at' => 'datetime',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
@@ -95,6 +100,14 @@ class Reservation extends Model
     }
 
     /**
+     * Get the admin who approved the reservation.
+     */
+    public function approver(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'approved_by');
+    }
+
+    /**
      * Get the car that is reserved.
      */
     public function car(): BelongsTo
@@ -108,6 +121,30 @@ class Reservation extends Model
     public function payments(): HasMany
     {
         return $this->hasMany(Payment::class);
+    }
+
+    /**
+     * Get the inspections for the reservation.
+     */
+    public function inspections(): HasMany
+    {
+        return $this->hasMany(VehicleInspection::class);
+    }
+
+    /**
+     * Get the damage reports for the reservation.
+     */
+    public function damageReports(): HasMany
+    {
+        return $this->hasMany(DamageReport::class);
+    }
+
+    /**
+     * Get the disputes for the reservation.
+     */
+    public function disputes(): HasMany
+    {
+        return $this->hasMany(Dispute::class);
     }
 
     /**
@@ -151,6 +188,57 @@ class Reservation extends Model
             ReservationStatus::PENDING,
             ReservationStatus::CONFIRMED
         ]);
+    }
+
+    /**
+     * Check if reservation can be approved.
+     *
+     * @return bool
+     */
+    public function canBeApproved(): bool
+    {
+        return $this->status === ReservationStatus::PENDING;
+    }
+
+    /**
+     * Check if reservation can be rejected.
+     *
+     * @return bool
+     */
+    public function canBeRejected(): bool
+    {
+        return $this->status === ReservationStatus::PENDING;
+    }
+
+    /**
+     * Approve the reservation.
+     */
+    public function approve(?int $adminId = null): bool
+    {
+        if (!$this->canBeApproved()) {
+            return false;
+        }
+
+        $this->status = ReservationStatus::CONFIRMED;
+        $this->approved_by = $adminId;
+        $this->approved_at = now();
+        return $this->save();
+    }
+
+    /**
+     * Reject the reservation.
+     */
+    public function reject(?int $adminId = null): bool
+    {
+        if (!$this->canBeRejected()) {
+            return false;
+        }
+
+        $this->status = ReservationStatus::CANCELLED;
+        $this->approved_by = $adminId;
+        $this->rejected_at = now();
+        $this->cancelled_at = now();
+        return $this->save();
     }
 
     /**

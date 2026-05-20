@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import AdminLayout from '@/layouts/AdminLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
 import { Button } from '@/components/ui/button';
-import { computed } from 'vue';
-import { index, edit, print } from '@/routes/admin/reservations';
+import { computed, ref } from 'vue';
+import { index, edit, print, approve, reject } from '@/routes/admin/reservations';
 
 const props = defineProps<{
   reservation: any
@@ -12,11 +12,20 @@ const props = defineProps<{
   currency: { symbol: string; code: string }
 }>()
 
+const showRejectDialog = ref(false)
+const rejectionReason = ref('')
+const isProcessing = ref(false)
+
 const statusMap = computed(() => {
   const map: Record<string, { label: string; color: string }> = {}
   for (const s of props.statusMeta || []) map[s.value] = { label: s.label, color: s.color }
   return map
 })
+
+const canApprove = computed(() => props.reservation.status === 'pending')
+const canReject = computed(() => props.reservation.status === 'pending')
+const canStartPickupInspection = computed(() => props.reservation.status === 'confirmed')
+const canStartReturnInspection = computed(() => props.reservation.status === 'active')
 
 function getStatusStyle(status: string) {
   const meta = statusMap.value[status]
@@ -35,6 +44,32 @@ function fmtMoney(n?: number | string) {
   const v = Number(n ?? 0)
   return `${props.currency.symbol}${v.toFixed(2)}`
 }
+
+function handleApprove() {
+  isProcessing.value = true
+  router.post(approve(props.reservation.id).url, {}, {
+    onFinish: () => {
+      isProcessing.value = false
+    },
+  })
+}
+
+function handleReject() {
+  if (!rejectionReason.value.trim()) {
+    alert('Please provide a rejection reason')
+    return
+  }
+
+  isProcessing.value = true
+  router.post(reject(props.reservation.id).url, {
+    cancellation_reason: rejectionReason.value,
+  }, {
+    onFinish: () => {
+      isProcessing.value = false
+      showRejectDialog.value = false
+    },
+  })
+}
 </script>
 
 <template>
@@ -52,9 +87,72 @@ function fmtMoney(n?: number | string) {
           <Link :href="edit(reservation.id).url">
             <Button variant="outline">Edit</Button>
           </Link>
+          <button
+            v-if="canApprove"
+            @click="handleApprove"
+            :disabled="isProcessing"
+            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50"
+          >
+            {{ isProcessing ? 'Approving...' : 'Approve' }}
+          </button>
+          <button
+            v-if="canReject"
+            @click="showRejectDialog = true"
+            :disabled="isProcessing"
+            class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 disabled:opacity-50"
+          >
+            {{ isProcessing ? 'Rejecting...' : 'Reject' }}
+          </button>
+          <Link
+            v-if="canStartPickupInspection"
+            :href="route('admin.pickupInspection.create', reservation.id)"
+          >
+            <Button class="bg-blue-600 hover:bg-blue-700">Start Pickup Inspection</Button>
+          </Link>
+          <Link
+            v-if="canStartReturnInspection"
+            :href="route('admin.returnInspection.create', reservation.id)"
+          >
+            <Button class="bg-purple-600 hover:bg-purple-700">Start Return Inspection</Button>
+          </Link>
+          <Link
+            v-if="reservation.status === 'completed'"
+            :href="route('admin.reservations.inspection-comparison', reservation.id)"
+          >
+            <Button class="bg-indigo-600 hover:bg-indigo-700">View Inspection Comparison</Button>
+          </Link>
           <a :href="print(reservation.id).url" target="_blank" rel="noopener">
             <Button variant="secondary">Print</Button>
           </a>
+        </div>
+      </div>
+
+      <!-- Rejection Dialog -->
+      <div v-if="showRejectDialog" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-96 shadow-lg">
+          <h2 class="text-lg font-semibold mb-4">Reject Reservation</h2>
+          <p class="text-gray-600 mb-4">Please provide a reason for rejecting this reservation.</p>
+          <textarea
+            v-model="rejectionReason"
+            placeholder="Enter rejection reason..."
+            class="w-full border rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-red-500"
+            rows="4"
+          ></textarea>
+          <div class="flex gap-2 justify-end">
+            <button
+              @click="showRejectDialog = false"
+              class="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400"
+            >
+              Cancel
+            </button>
+            <button
+              @click="handleReject"
+              :disabled="isProcessing"
+              class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 disabled:opacity-50"
+            >
+              {{ isProcessing ? 'Rejecting...' : 'Confirm Reject' }}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -130,7 +228,11 @@ function fmtMoney(n?: number | string) {
               <div class="text-sm text-muted-foreground">Return Location</div>
               <div class="font-medium">{{ reservation.return_location || '—' }}</div>
             </div>
-            <div v-if="reservation.status === 'cancelled'">
+            <div v-if="reservation.approved_at">
+              <div class="text-sm text-muted-foreground">Approved At</div>
+              <div class="font-medium">{{ new Date(reservation.approved_at).toLocaleString() }}</div>
+            </div>
+            <div v-if="reservation.status === 'cancelled' && reservation.cancelled_at">
               <div class="text-sm text-muted-foreground">Cancelled At</div>
               <div class="font-medium">{{ reservation.cancelled_at ? new Date(reservation.cancelled_at).toLocaleString() : '—' }}</div>
               <div class="text-sm text-muted-foreground mt-2">Reason</div>

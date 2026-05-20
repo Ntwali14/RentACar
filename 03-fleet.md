@@ -1,0 +1,20 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]
+      - generic [ref=e10]
+      - link "Dashboard" [ref=e16] [cursor=pointer]:
+        - /url: /client/reservations
+  - generic [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e25]
+      - generic [ref=e32]
+      - generic [ref=e51]
+    - generic [ref=e54]:
+      - generic [ref=e56]
+      - generic [ref=e64]
+      - generic [ref=e296]
+  - contentinfo [ref=e303]:
+    - generic [ref=e304]:
+      - generic [ref=e305]
+      - paragraph [ref=e354]: © 2025 RentACar. All rights reserved.

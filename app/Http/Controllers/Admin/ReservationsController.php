@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Payment;
 use App\Enums\ReservationStatus;
 use App\Enums\PaymentStatus;
+use App\Enums\CarStatus;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -127,12 +128,6 @@ class ReservationsController extends Controller
             'cancellation_reason' => ['nullable', 'string'],
         ]);
 
-        // Restrict this action
-        return redirect()
-            ->back()
-            ->with('restricted_action', 'This is a demo version. For security reasons, create, update, and delete actions are disabled.');
-
-
         $reservation->fill($validated);
 
         // Recalculate totals when dates or discount change
@@ -158,6 +153,48 @@ class ReservationsController extends Controller
         return redirect()
             ->route('admin.reservations.show', $reservation)
             ->with('success', 'Reservation updated successfully.');
+    }
+
+    /**
+     * Approve a pending reservation.
+     */
+    public function approve(Reservation $reservation)
+    {
+        if (!$reservation->canBeApproved()) {
+            return redirect()
+                ->back()
+                ->with('error', 'This reservation cannot be approved.');
+        }
+
+        $reservation->approve(auth()->id());
+        $reservation->car->update(['status' => CarStatus::RESERVED]);
+
+        return redirect()
+            ->route('admin.reservations.show', $reservation)
+            ->with('success', 'Reservation approved successfully. Vehicle status updated to Reserved.');
+    }
+
+    /**
+     * Reject a pending reservation.
+     */
+    public function reject(Reservation $reservation, Request $request)
+    {
+        if (!$reservation->canBeRejected()) {
+            return redirect()
+                ->back()
+                ->with('error', 'This reservation cannot be rejected.');
+        }
+
+        $validated = $request->validate([
+            'cancellation_reason' => 'required|string|max:500',
+        ]);
+
+        $reservation->cancellation_reason = $validated['cancellation_reason'];
+        $reservation->reject(auth()->id());
+
+        return redirect()
+            ->route('admin.reservations.show', $reservation)
+            ->with('success', 'Reservation rejected successfully.');
     }
 
     /**

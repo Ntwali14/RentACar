@@ -1,0 +1,56 @@
+[    9550ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/23/image/Mitsubishi_Outlander.webp:0
+[    9665ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/8/image/Ford_Explorer.webp:0
+[    9762ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/13/image/Hyundai_Sonata.webp:0
+[    9833ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/17/image/Kia_Optima.webp:0
+[    9918ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/29/image/Volkswagen_Golf.webp:0
+[    9991ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/6/image/Chevrolet_Tahoe.webp:0
+[   59893ms] TypeError: Cannot read properties of undefined (reading 'toString')
+    at hrefToUrl (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:13399:23)
+    at _Response.pageUrl (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14575:25)
+    at _Response.setPage (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14543:68)
+    at async _Response.process (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14468:5)
+[   65990ms] TypeError: Cannot read properties of undefined (reading 'toString')
+    at hrefToUrl (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:13399:23)
+    at _Response.pageUrl (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14575:25)
+    at _Response.setPage (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14543:68)
+    at async _Response.process (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14468:5)
+[   68221ms] TypeError: Cannot read properties of undefined (reading 'toString')
+    at hrefToUrl (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:13399:23)
+    at _Response.pageUrl (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14575:25)
+    at _Response.setPage (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14543:68)
+    at async _Response.process (http://[::1]:5174/node_modules/.vite/deps/chunk-XVCM5R2R.js?v=45842563:14468:5)
+[  365801ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/23/image/Mitsubishi_Outlander.webp:0
+[  365992ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/8/image/Ford_Explorer.webp:0
+[  366078ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/17/image/Kia_Optima.webp:0
+[  366194ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/13/image/Hyundai_Sonata.webp:0
+[  366492ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/29/image/Volkswagen_Golf.webp:0
+[  366677ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/6/image/Chevrolet_Tahoe.webp:0
+[  370596ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/2/image/Audi_Q5.webp:0
+[  370661ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/3/image/BMW_X5.webp:0
+[  370732ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/4/image/Chevrolet_Camaro.webp:0
+[  370791ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/5/image/Chevrolet_Malibu.webp:0
+[  370858ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/7/image/Fiat_500.webp:0
+[  370933ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/6/image/Chevrolet_Tahoe.webp:0
+[  371023ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/8/image/Ford_Explorer.webp:0
+[  371068ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/11/image/GMC_Sierra_1500.webp:0
+[  371126ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/12/image/Honda_Civic.webp:0
+[  371189ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/13/image/Hyundai_Sonata.webp:0
+[  375824ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/23/image/Mitsubishi_Outlander.webp:0
+[  375890ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/8/image/Ford_Explorer.webp:0
+[  375962ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/17/image/Kia_Optima.webp:0
+[  376032ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/13/image/Hyundai_Sonata.webp:0
+[  376105ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/29/image/Volkswagen_Golf.webp:0
+[  376171ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/6/image/Chevrolet_Tahoe.webp:0
+[  444187ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/23/image/Mitsubishi_Outlander.webp:0
+[  444260ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/8/image/Ford_Explorer.webp:0
+[  444328ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/13/image/Hyundai_Sonata.webp:0
+[  444394ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/29/image/Volkswagen_Golf.webp:0
+[  444444ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/6/image/Chevrolet_Tahoe.webp:0
+[  444532ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/17/image/Kia_Optima.webp:0
+[  826543ms] [LOG] [vite] server connection lost. Polling for restart... @ http://[::1]:5174/@vite/client:863
+[  956235ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/8/image/Ford_Explorer.webp:0
+[  956276ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/13/image/Hyundai_Sonata.webp:0
+[  956306ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/23/image/Mitsubishi_Outlander.webp:0
+[  956338ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/17/image/Kia_Optima.webp:0
+[  956369ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/29/image/Volkswagen_Golf.webp:0
+[  956412ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/6/image/Chevrolet_Tahoe.webp:0

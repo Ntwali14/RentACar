@@ -2,7 +2,11 @@
 import HomeLayout from '@/layouts/HomeLayout.vue';
 import { fleet } from '@/routes'
 import { contact } from '@/routes'
+import { computed } from 'vue';
 
+const appName = computed(() => {
+    return import.meta.env.VITE_APP_NAME || 'RentACar';
+});
 </script>
 <template>
     <HomeLayout>
@@ -11,7 +15,7 @@ import { contact } from '@/routes'
                 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                     <div class="text-center">
                         <h1 class="mb-6 text-4xl font-bold md:text-5xl">
-                            About Real Rent Car
+                            About {{ appName }}
                         </h1>
                         <p
                             class="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300"
@@ -35,7 +39,7 @@ import { contact } from '@/routes'
                                 class="space-y-4 leading-relaxed text-gray-600"
                             >
                                 <p>
-                                    Founded in 2015, Real Rent Car began with a
+                                    Founded in 2015, {{ appName }} began with a
                                     simple mission: to provide reliable,
                                     affordable, and convenient car rental
                                     services to travelers and locals alike. What
@@ -193,7 +197,7 @@ import { contact } from '@/routes'
                         <h2
                             class="mb-8 text-center text-3xl font-bold text-gray-900"
                         >
-                            Why Choose Real Rent Car?
+                            Why Choose {{ appName }}?
                         </h2>
 
                         <div class="grid gap-8 md:grid-cols-2">
@@ -424,7 +428,7 @@ import { contact } from '@/routes'
                         Ready to Get Started?
                     </h2>
                     <p class="mx-auto mb-8 max-w-2xl text-gray-300">
-                        Experience the Real Rent Car difference today. Browse
+                        Experience the {{ appName }} difference today. Browse
                         our fleet and book your perfect vehicle in just a few
                         clicks.
                     </p>

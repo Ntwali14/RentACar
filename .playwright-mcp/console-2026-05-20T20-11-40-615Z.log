@@ -1,0 +1,8 @@
+[   13064ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:8000/:0
+[   66165ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/8/image/Ford_Explorer.webp:0
+[   66230ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/13/image/Hyundai_Sonata.webp:0
+[   66237ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/23/image/Mitsubishi_Outlander.webp:0
+[   66278ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/17/image/Kia_Optima.webp:0
+[   66311ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/29/image/Volkswagen_Golf.webp:0
+[   66385ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://127.0.0.1:8000/storage/files/car/6/image/Chevrolet_Tahoe.webp:0
+[ 1565164ms] [LOG] [vite] server connection lost. Polling for restart... @ http://[::1]:5174/@vite/client:863

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Enums\CarColor;
 use App\Enums\CarStatus;
+use App\Enums\ConditionStatus;
 use App\Enums\FuelType;
 use App\Models\Car;
 use Illuminate\Http\Request;
@@ -87,6 +88,10 @@ class CarsController extends Controller
                     'label' => $status->label(),
                     'color' => $status->color()
                 ], CarStatus::cases()),
+                'conditionStatuses' => array_map(fn($condition) => [
+                    'value' => $condition->value,
+                    'label' => ucfirst($condition->value),
+                ], ConditionStatus::cases()),
             ],
         ]);
     }
@@ -101,6 +106,7 @@ class CarsController extends Controller
             'model' => ['required', 'string', 'max:255'],
             'year' => ['required', 'integer', 'min:1900', 'max:2100'],
             'license_plate' => ['required', 'string', 'max:255', 'unique:cars,license_plate'],
+            'vin' => ['nullable', 'string', 'max:255'],
             'color' => ['required', 'string', Rule::enum(CarColor::class)],
             'price_per_day' => ['required', 'numeric', 'min:0'],
             'mileage' => ['required', 'integer', 'min:0'],
@@ -109,6 +115,7 @@ class CarsController extends Controller
             'fuel_type' => ['required', 'string', Rule::enum(FuelType::class)],
             'description' => ['nullable', 'string'],
             'status' => ['required', 'string', Rule::enum(CarStatus::class)],
+            'current_condition_status' => ['nullable', 'string', Rule::enum(ConditionStatus::class)],
             'image' => ['array'],
             'image.*' => ['string'],
         ]);
@@ -160,6 +167,10 @@ class CarsController extends Controller
                     'label' => $status->label(),
                     'color' => $status->color()
                 ], CarStatus::cases()),
+                'conditionStatuses' => array_map(fn($condition) => [
+                    'value' => $condition->value,
+                    'label' => ucfirst($condition->value),
+                ], ConditionStatus::cases()),
             ],
         ]);
     }
@@ -176,6 +187,7 @@ class CarsController extends Controller
             'license_plate' => [
                 'required', 'string', 'max:255', Rule::unique('cars', 'license_plate')->ignore($car->id),
             ],
+            'vin' => ['nullable', 'string', 'max:255'],
             'color' => ['required', 'string', Rule::enum(CarColor::class)],
             'price_per_day' => ['required', 'numeric', 'min:0'],
             'mileage' => ['required', 'integer', 'min:0'],
@@ -184,6 +196,7 @@ class CarsController extends Controller
             'fuel_type' => ['required', 'string', Rule::enum(FuelType::class)],
             'description' => ['nullable', 'string'],
             'status' => ['required', 'string', Rule::enum(CarStatus::class)],
+            'current_condition_status' => ['nullable', 'string', Rule::enum(ConditionStatus::class)],
             // File updates for single image
             'image_temp_folders' => ['array'],
             'image_temp_folders.*' => ['string'],

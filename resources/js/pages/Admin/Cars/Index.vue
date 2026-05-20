@@ -31,13 +31,14 @@ const props = defineProps<{
       status: string
       status_label?: string
       status_color?: string
+      current_condition_status?: string | null
       image_url?: string
     }>
     links: Array<{ url: string | null; label: string; active: boolean }>
   }
-  filters: { 
+  filters: {
     search?: string
-    status?: string 
+    status?: string
   }
   statuses: Record<string, {
     label: string
@@ -198,6 +199,7 @@ const destroyCar = () => {
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plate</th>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price/Day</th>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Condition</th>
                             <th class="px-4 py-3"></th>
                         </tr>
                     </thead>
@@ -219,12 +221,21 @@ const destroyCar = () => {
                                     color: getStatusColor(car.status).text
                                   }"
                                 >
-                                  <span 
-                                    class="size-2 rounded-full" 
+                                  <span
+                                    class="size-2 rounded-full"
                                     :style="{ backgroundColor: getStatusColor(car.status).dot }"
                                   />
                                   {{ car.status_label || car.status }}
                                 </span>
+                            </td>
+                            <td class="px-4 py-3">
+                                <span
+                                  v-if="car.current_condition_status"
+                                  class="inline-flex rounded-full px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-700"
+                                >
+                                  {{ car.current_condition_status }}
+                                </span>
+                                <span v-else class="text-gray-400 text-xs">--</span>
                             </td>
                             <td class="px-4 py-3 text-right space-x-2">
                                 <Link :href="`/admin/cars/${car.id}/edit`">
@@ -234,7 +245,7 @@ const destroyCar = () => {
                             </td>
                         </tr>
                         <tr v-if="props.cars.data.length === 0">
-                            <td colspan="6" class="px-4 py-6 text-center text-gray-500">No cars found.</td>
+                            <td colspan="7" class="px-4 py-6 text-center text-gray-500">No cars found.</td>
                         </tr>
                     </tbody>
                 </table>

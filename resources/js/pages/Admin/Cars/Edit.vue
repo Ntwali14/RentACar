@@ -16,6 +16,7 @@ const props = defineProps<{
         colors: Array<{ name: string; value: string; hex: string }>;
         fuelTypes: string[];
         statuses: Array<{ value: string; label: string; color: string }>;
+        conditionStatuses: Array<{ value: string; label: string }>;
     };
 }>();
 
@@ -45,12 +46,20 @@ const statuses = computed(() =>
     })),
 );
 
+const conditionStatuses = computed(() =>
+    props.enums.conditionStatuses.map((condition) => ({
+        value: condition.value,
+        label: condition.label,
+    })),
+);
+
 // Initialize form with default values
 const form = useForm({
     make: props.car?.make ?? '',
     model: props.car?.model ?? '',
     year: props.car?.year ?? '',
     license_plate: props.car?.license_plate ?? '',
+    vin: props.car?.vin ?? '',
     color: (props.car?.color || 'white').toLowerCase(),
     price_per_day: props.car?.price_per_day ?? '',
     mileage: props.car?.mileage ?? '',
@@ -59,6 +68,7 @@ const form = useForm({
     fuel_type: (props.car?.fuel_type || 'gasoline').toLowerCase(),
     description: props.car?.description ?? '',
     status: props.car?.status ?? 'available',
+    current_condition_status: props.car?.current_condition_status ?? '',
     // FilePond fields
     image: [] as string[],
     image_temp_folders: [] as string[],
@@ -159,6 +169,28 @@ function submit() {
                                 </select>
                                 <InputError
                                     :message="form.errors.status"
+                                    class="mt-1"
+                                />
+                            </div>
+                            <!-- Condition Status -->
+                            <div>
+                                <Label for="current_condition_status">Condition Status</Label>
+                                <select
+                                    id="current_condition_status"
+                                    v-model="form.current_condition_status"
+                                    class="mt-1 block w-full rounded-md border border-gray-300 py-2 pr-10 pl-3 text-base focus:border-blue-500 focus:ring-blue-500 focus:outline-none sm:text-sm"
+                                >
+                                    <option value="">-- None --</option>
+                                    <option
+                                        v-for="condition in conditionStatuses"
+                                        :key="condition.value"
+                                        :value="condition.value"
+                                    >
+                                        {{ condition.label }}
+                                    </option>
+                                </select>
+                                <InputError
+                                    :message="form.errors.current_condition_status"
                                     class="mt-1"
                                 />
                             </div>
@@ -277,6 +309,20 @@ function submit() {
                             />
                             <InputError
                                 :message="form.errors.license_plate"
+                                class="mt-1"
+                            />
+                        </div>
+
+                        <!-- VIN -->
+                        <div>
+                            <Label for="vin">VIN (Vehicle Identification Number)</Label>
+                            <Input
+                                id="vin"
+                                v-model="form.vin"
+                                placeholder="e.g., 1HGBH41JXMN109186"
+                            />
+                            <InputError
+                                :message="form.errors.vin"
                                 class="mt-1"
                             />
                         </div>

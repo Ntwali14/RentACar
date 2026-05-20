@@ -8,12 +8,17 @@ import { home } from '@/routes';
 import { fleet } from '@/routes';
 import { about } from '@/routes';
 import { contact } from '@/routes';
+import { computed } from 'vue';
 
 const $page = usePage();
 
 const role = $page.props.auth.user?.role;
 
 const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIndex();
+
+const appName = computed(() => {
+    return import.meta.env.VITE_APP_NAME || 'RentACar';
+});
 </script>
 
 <template>
@@ -24,11 +29,9 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <nav class="flex h-16 items-center justify-between">
                     <!--  Logo -->
-                    <div class="flex flex-col items-center space-x-2">
+                    <div class="flex items-center space-x-2">
                         <img src="/logo/logo.png" alt="logo" class="h-6" />
-                        <p class="font-bold">
-                            REAL<span class="text-orange-500">RENT</span>CAR
-                        </p>
+                        <p class="font-bold">{{ appName }}</p>
                     </div>
 
                     <!--  Navigation -->
@@ -130,11 +133,7 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">
-                                    REAL<span class="text-orange-500"
-                                        >RENT</span
-                                    >
-                                </h3>
+                                <h3 class="text-xl font-bold">{{ appName }}</h3>
                                 <p class="text-xs font-medium text-gray-400">
                                     PREMIUM CARS
                                 </p>
@@ -277,11 +276,11 @@ const dashboardLink = role === 'admin' ? adminCarsIndex() : clientReservationsIn
                 </div>
 
                 <div class="mt-2 border-t border-gray-800 pt-8">
-                   
+
                         <p class="text-gray-400 text-center">
-                            &copy; 2025 RealRent. All rights reserved.
+                            &copy; 2025 {{ appName }}. All rights reserved.
                         </p>
-                       
+
                 </div>
             </div>
         </footer>

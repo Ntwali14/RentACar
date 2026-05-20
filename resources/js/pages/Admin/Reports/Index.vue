@@ -304,6 +304,93 @@ onMounted(() => {
                 </div>
             </div>
 
+            <!-- Quick Reports Navigation -->
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <a href="/admin/reports/reservations" class="block p-4 rounded-lg bg-white shadow hover:shadow-lg transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                            <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Reservations</h3>
+                            <p class="text-sm text-gray-500">Booking details</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/admin/reports/vehicle-condition-history" class="block p-4 rounded-lg bg-white shadow hover:shadow-lg transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
+                            <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Condition History</h3>
+                            <p class="text-sm text-gray-500">Vehicle status</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/admin/reports/inspections" class="block p-4 rounded-lg bg-white shadow hover:shadow-lg transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100">
+                            <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Inspections</h3>
+                            <p class="text-sm text-gray-500">Inspection records</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/admin/reports/damage-reports" class="block p-4 rounded-lg bg-white shadow hover:shadow-lg transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100">
+                            <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Damage Reports</h3>
+                            <p class="text-sm text-gray-500">Vehicle damage</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/admin/reports/disputes" class="block p-4 rounded-lg bg-white shadow hover:shadow-lg transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-100">
+                            <svg class="h-6 w-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Disputes</h3>
+                            <p class="text-sm text-gray-500">Customer disputes</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/admin/reports/frequent-damage" class="block p-4 rounded-lg bg-white shadow hover:shadow-lg transition-shadow">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100">
+                            <svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Frequent Damage</h3>
+                            <p class="text-sm text-gray-500">Problem vehicles</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
             <!-- High-level KPIs -->
             <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 <!-- Total Revenue -->

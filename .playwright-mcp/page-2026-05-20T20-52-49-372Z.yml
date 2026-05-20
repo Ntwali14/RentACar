@@ -1,0 +1,94 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - list [ref=e8]:
+      - listitem [ref=e9]:
+        - link "RentACar" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e12]: RentACar
+    - generic [ref=e14]:
+      - generic [ref=e15]: Platform
+      - list [ref=e16]:
+        - listitem [ref=e17]:
+          - link "Cars" [ref=e18] [cursor=pointer]:
+            - /url: /admin/cars
+            - img [ref=e19]
+            - generic [ref=e23]: Cars
+        - listitem [ref=e24]:
+          - link "Reservations" [ref=e25] [cursor=pointer]:
+            - /url: /admin/reservations
+            - img [ref=e26]
+            - generic [ref=e28]: Reservations
+        - listitem [ref=e29]:
+          - link "Clients" [ref=e30] [cursor=pointer]:
+            - /url: /admin/clients
+            - img [ref=e31]
+            - generic [ref=e34]: Clients
+        - listitem [ref=e35]:
+          - link "Payments" [ref=e36] [cursor=pointer]:
+            - /url: /admin/payments
+            - img [ref=e37]
+            - generic [ref=e39]: Payments
+        - listitem [ref=e40]:
+          - link "Reports" [ref=e41] [cursor=pointer]:
+            - /url: /admin/reports
+            - img [ref=e42]
+            - generic [ref=e43]: Reports
+        - listitem [ref=e44]:
+          - link "Support" [ref=e45] [cursor=pointer]:
+            - /url: /admin/support
+            - img [ref=e46]
+            - generic [ref=e53]: Support
+    - list [ref=e55]:
+      - listitem [ref=e56]:
+        - button "CU Client User" [ref=e57]:
+          - generic [ref=e59]: CU
+          - generic [ref=e61]: Client User
+          - img [ref=e62]
+  - main [ref=e65]:
+    - generic [ref=e67]:
+      - button "Toggle Sidebar" [ref=e68] [cursor=pointer]:
+        - img
+        - generic [ref=e69]: Toggle Sidebar
+      - navigation "breadcrumb" [ref=e70]:
+        - list [ref=e71]:
+          - listitem [ref=e72]:
+            - link "Profile settings" [disabled] [ref=e73]
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - heading "Settings" [level=2] [ref=e76]
+        - paragraph [ref=e77]: Manage your profile and account settings
+      - generic [ref=e78]:
+        - complementary [ref=e79]:
+          - navigation [ref=e80]:
+            - link "Profile" [ref=e81] [cursor=pointer]:
+              - /url: /settings/profile
+            - link "Password" [ref=e82] [cursor=pointer]:
+              - /url: /settings/password
+            - link "Two-Factor Auth" [ref=e83] [cursor=pointer]:
+              - /url: /settings/two-factor
+            - link "Appearance" [ref=e84] [cursor=pointer]:
+              - /url: /settings/appearance
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - heading "Profile information" [level=3] [ref=e89]
+              - paragraph [ref=e90]: Update your name and email address
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e93]: Name
+                - textbox "Name" [ref=e94]:
+                  - /placeholder: Full name
+                  - text: Client User
+              - generic [ref=e95]:
+                - generic [ref=e96]: Email address
+                - textbox "Email address" [ref=e97]: client@example.com
+              - button "Save" [ref=e99] [cursor=pointer]
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - heading "Delete account" [level=3] [ref=e102]
+              - paragraph [ref=e103]: Delete your account and all of its resources
+            - generic [ref=e104]:
+              - generic [ref=e105]:
+                - paragraph [ref=e106]: Warning
+                - paragraph [ref=e107]: Please proceed with caution, this cannot be undone.
+              - button "Delete account" [ref=e108] [cursor=pointer]

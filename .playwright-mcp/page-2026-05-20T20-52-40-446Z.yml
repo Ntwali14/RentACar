@@ -1,0 +1,115 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - link "RentACar" [ref=e7] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e9]: RentACar
+    - navigation "Main" [ref=e11]:
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - link "Reservations" [ref=e15] [cursor=pointer]:
+            - /url: /client/reservations
+            - img [ref=e16]
+            - text: Reservations
+        - listitem [ref=e21]:
+          - link "Support" [ref=e22] [cursor=pointer]:
+            - /url: /client/support
+            - img [ref=e23]
+            - text: Support
+    - button "CU" [ref=e31] [cursor=pointer]:
+      - generic [ref=e33]: CU
+  - main [ref=e34]:
+    - main [ref=e35]:
+      - heading "Reservations" [level=1] [ref=e37]
+      - table [ref=e39]:
+        - rowgroup [ref=e40]:
+          - row "# Car Dates Total Status" [ref=e41]:
+            - columnheader "#" [ref=e42]
+            - columnheader "Car" [ref=e43]
+            - columnheader "Dates" [ref=e44]
+            - columnheader "Total" [ref=e45]
+            - columnheader "Status" [ref=e46]
+        - rowgroup [ref=e47]:
+          - row "RES-IA3LLPAO 2020 Hyundai Sonata HH-8013 5/20/2026 → 5/20/2026 1 days $ 64.20 confirmed" [ref=e48] [cursor=pointer]:
+            - cell "RES-IA3LLPAO" [ref=e49]:
+              - generic [ref=e50]: RES-IA3LLPAO
+            - cell "2020 Hyundai Sonata HH-8013" [ref=e51]:
+              - generic [ref=e52]: 2020 Hyundai Sonata
+              - generic [ref=e53]: HH-8013
+            - cell "5/20/2026 → 5/20/2026 1 days" [ref=e54]:
+              - generic [ref=e55]: 5/20/2026 → 5/20/2026
+              - generic [ref=e56]: 1 days
+            - cell "$ 64.20" [ref=e57]
+            - cell "confirmed" [ref=e58]
+          - row "RES-Y8PCJWOT 2020 Nissan Altima NN-1824 5/18/2026 → 5/23/2026 6 days $ 365.94 active" [ref=e59] [cursor=pointer]:
+            - cell "RES-Y8PCJWOT" [ref=e60]:
+              - generic [ref=e61]: RES-Y8PCJWOT
+            - cell "2020 Nissan Altima NN-1824" [ref=e62]:
+              - generic [ref=e63]: 2020 Nissan Altima
+              - generic [ref=e64]: NN-1824
+            - cell "5/18/2026 → 5/23/2026 6 days" [ref=e65]:
+              - generic [ref=e66]: 5/18/2026 → 5/23/2026
+              - generic [ref=e67]: 6 days
+            - cell "$ 365.94" [ref=e68]
+            - cell "active" [ref=e69]
+          - row "RES-1NUKHOAK 2019 Fiat 500 FF-4007 5/15/2026 → 5/18/2026 4 days $ 171.20 no_show" [ref=e70] [cursor=pointer]:
+            - cell "RES-1NUKHOAK" [ref=e71]:
+              - generic [ref=e72]: RES-1NUKHOAK
+            - cell "2019 Fiat 500 FF-4007" [ref=e73]:
+              - generic [ref=e74]: 2019 Fiat 500
+              - generic [ref=e75]: FF-4007
+            - cell "5/15/2026 → 5/18/2026 4 days" [ref=e76]:
+              - generic [ref=e77]: 5/15/2026 → 5/18/2026
+              - generic [ref=e78]: 4 days
+            - cell "$ 171.20" [ref=e79]
+            - cell "no_show" [ref=e80]
+          - row "RES-DGYHLB75 2020 Mini Cooper MM-1622 4/20/2026 → 4/25/2026 6 days $ 321.00 completed" [ref=e81] [cursor=pointer]:
+            - cell "RES-DGYHLB75" [ref=e82]:
+              - generic [ref=e83]: RES-DGYHLB75
+            - cell "2020 Mini Cooper MM-1622" [ref=e84]:
+              - generic [ref=e85]: 2020 Mini Cooper
+              - generic [ref=e86]: MM-1622
+            - cell "4/20/2026 → 4/25/2026 6 days" [ref=e87]:
+              - generic [ref=e88]: 4/20/2026 → 4/25/2026
+              - generic [ref=e89]: 6 days
+            - cell "$ 321.00" [ref=e90]
+            - cell "completed" [ref=e91]
+          - row "RES-OWR0PXGA 2020 Mazda CX-5 MM-1420 4/20/2026 → 4/25/2026 6 days $ 417.30 completed" [ref=e92] [cursor=pointer]:
+            - cell "RES-OWR0PXGA" [ref=e93]:
+              - generic [ref=e94]: RES-OWR0PXGA
+            - cell "2020 Mazda CX-5 MM-1420" [ref=e95]:
+              - generic [ref=e96]: 2020 Mazda CX-5
+              - generic [ref=e97]: MM-1420
+            - cell "4/20/2026 → 4/25/2026 6 days" [ref=e98]:
+              - generic [ref=e99]: 4/20/2026 → 4/25/2026
+              - generic [ref=e100]: 6 days
+            - cell "$ 417.30" [ref=e101]
+            - cell "completed" [ref=e102]
+          - row "RES-IZ5M47B5 2021 Lexus RX 350 LL-1319 4/5/2026 → 5/5/2026 31 days $ 2951.15 completed" [ref=e103] [cursor=pointer]:
+            - cell "RES-IZ5M47B5" [ref=e104]:
+              - generic [ref=e105]: RES-IZ5M47B5
+            - cell "2021 Lexus RX 350 LL-1319" [ref=e106]:
+              - generic [ref=e107]: 2021 Lexus RX 350
+              - generic [ref=e108]: LL-1319
+            - cell "4/5/2026 → 5/5/2026 31 days" [ref=e109]:
+              - generic [ref=e110]: 4/5/2026 → 5/5/2026
+              - generic [ref=e111]: 31 days
+            - cell "$ 2951.15" [ref=e112]
+            - cell "completed" [ref=e113]
+          - row "RES-JGSHAWQJ 2021 Chevrolet Tahoe CC-3006 4/5/2026 → 5/5/2026 31 days $ 3448.70 completed" [ref=e114] [cursor=pointer]:
+            - cell "RES-JGSHAWQJ" [ref=e115]:
+              - generic [ref=e116]: RES-JGSHAWQJ
+            - cell "2021 Chevrolet Tahoe CC-3006" [ref=e117]:
+              - generic [ref=e118]: 2021 Chevrolet Tahoe
+              - generic [ref=e119]: CC-3006
+            - cell "4/5/2026 → 5/5/2026 31 days" [ref=e120]:
+              - generic [ref=e121]: 4/5/2026 → 5/5/2026
+              - generic [ref=e122]: 31 days
+            - cell "$ 3448.70" [ref=e123]
+            - cell "completed" [ref=e124]
+      - navigation [ref=e125]:
+        - link "« Previous":
+          - /url: /client/reservations
+        - link "1" [ref=e126] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/client/reservations?page=1
+        - link "Next »":
+          - /url: /client/reservations

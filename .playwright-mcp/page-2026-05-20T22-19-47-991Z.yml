@@ -1,0 +1,235 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - navigation [ref=e6]:
+      - generic [ref=e7]:
+        - img "logo" [ref=e8]
+        - paragraph [ref=e9]: RentACar
+      - generic [ref=e10]:
+        - link "Home" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - link "Fleet" [ref=e12] [cursor=pointer]:
+          - /url: /fleet
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e15]:
+        - link "Sign In" [ref=e16] [cursor=pointer]:
+          - /url: /login
+        - link "Get Started" [ref=e17] [cursor=pointer]:
+          - /url: /register
+  - main [ref=e18]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - img [ref=e27]
+            - text: Premium Car Rental Experience
+          - heading "Drive Your Dreams" [level=1] [ref=e29]
+          - paragraph [ref=e30]: Experience luxury and reliability with our premium fleet. From business meetings to weekend adventures, find the perfect vehicle for every journey.
+        - generic [ref=e31]:
+          - link "Browse Fleet" [ref=e32] [cursor=pointer]:
+            - /url: /fleet
+            - img [ref=e33]
+            - text: Browse Fleet
+          - link "Learn More" [ref=e35] [cursor=pointer]:
+            - /url: /about
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - generic [ref=e38]: 1000+
+            - generic [ref=e39]: Happy Customers
+          - generic [ref=e40]:
+            - generic [ref=e41]: 150+
+            - generic [ref=e42]: Premium Cars
+          - generic [ref=e43]:
+            - generic [ref=e44]: 24/7
+            - generic [ref=e45]: Support
+      - img "Premium Car Garage - Isometric View" [ref=e49]
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - generic [ref=e53]: Our Premium Collection
+        - heading "Discover Our Elite Fleet" [level=2] [ref=e54]
+        - paragraph [ref=e55]: Each vehicle in our collection is meticulously maintained and equipped with premium features to ensure your journey is nothing short of exceptional.
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - img "Mitsubishi Outlander" [ref=e59]
+            - generic [ref=e60]: $60.00/day
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - heading "Mitsubishi Outlander - 2019 - 23" [level=3] [ref=e64]
+              - generic [ref=e65]:
+                - generic [ref=e66]:
+                  - img [ref=e67]
+                  - generic [ref=e69]: gasoline
+                - paragraph [ref=e71]: GPS included
+                - paragraph [ref=e73]: Insurance included
+            - paragraph [ref=e74]: Mid-size SUV with three rows and 10-year warranty.
+          - button "Book Now" [ref=e76] [cursor=pointer]:
+            - generic [ref=e77]:
+              - img [ref=e78]
+              - text: Book Now
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - img "Ford Explorer" [ref=e82]
+            - generic [ref=e83]: $80.00/day
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - heading "Ford Explorer - 2020 - 8" [level=3] [ref=e87]
+              - generic [ref=e88]:
+                - generic [ref=e89]:
+                  - img [ref=e90]
+                  - generic [ref=e92]: gasoline
+                - paragraph [ref=e94]: GPS included
+                - paragraph [ref=e96]: Insurance included
+            - paragraph [ref=e97]: Mid-size SUV with three rows and advanced safety features.
+          - button "Book Now" [ref=e99] [cursor=pointer]:
+            - generic [ref=e100]:
+              - img [ref=e101]
+              - text: Book Now
+        - generic [ref=e103]:
+          - generic [ref=e104]:
+            - img "Hyundai Sonata" [ref=e105]
+            - generic [ref=e106]: $60.00/day
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - heading "Hyundai Sonata - 2020 - 13" [level=3] [ref=e110]
+              - generic [ref=e111]:
+                - generic [ref=e112]:
+                  - img [ref=e113]
+                  - generic [ref=e115]: gasoline
+                - paragraph [ref=e117]: GPS included
+                - paragraph [ref=e119]: Insurance included
+            - paragraph [ref=e120]: Mid-size sedan with modern design and advanced features.
+          - button "Book Now" [ref=e122] [cursor=pointer]:
+            - generic [ref=e123]:
+              - img [ref=e124]
+              - text: Book Now
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - img "Kia Optima" [ref=e128]
+            - generic [ref=e129]: $58.00/day
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - heading "Kia Optima - 2020 - 17" [level=3] [ref=e133]
+              - generic [ref=e134]:
+                - generic [ref=e135]:
+                  - img [ref=e136]
+                  - generic [ref=e138]: gasoline
+                - paragraph [ref=e140]: GPS included
+                - paragraph [ref=e142]: Insurance included
+            - paragraph [ref=e143]: Mid-size sedan with sporty design and value pricing.
+          - button "Book Now" [ref=e145] [cursor=pointer]:
+            - generic [ref=e146]:
+              - img [ref=e147]
+              - text: Book Now
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - img "Volkswagen Golf" [ref=e151]
+            - generic [ref=e152]: $55.00/day
+          - generic [ref=e154]:
+            - generic [ref=e155]:
+              - heading "Volkswagen Golf - 2020 - 29" [level=3] [ref=e156]
+              - generic [ref=e157]:
+                - generic [ref=e158]:
+                  - img [ref=e159]
+                  - generic [ref=e161]: gasoline
+                - paragraph [ref=e163]: GPS included
+                - paragraph [ref=e165]: Insurance included
+            - paragraph [ref=e166]: Compact hatchback with European engineering and build quality.
+          - button "Book Now" [ref=e168] [cursor=pointer]:
+            - generic [ref=e169]:
+              - img [ref=e170]
+              - text: Book Now
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - img "Chevrolet Tahoe" [ref=e174]
+            - generic [ref=e175]: $110.00/day
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - heading "Chevrolet Tahoe - 2021 - 6" [level=3] [ref=e179]
+              - generic [ref=e180]:
+                - generic [ref=e181]:
+                  - img [ref=e182]
+                  - generic [ref=e184]: gasoline
+                - paragraph [ref=e186]: GPS included
+                - paragraph [ref=e188]: Insurance included
+            - paragraph [ref=e189]: Full-size SUV with ample seating and towing capability.
+          - button "Book Now" [ref=e191] [cursor=pointer]:
+            - generic [ref=e192]:
+              - img [ref=e193]
+              - text: Book Now
+      - link "View Complete Fleet" [ref=e196] [cursor=pointer]:
+        - /url: /fleet
+        - img [ref=e197]
+        - text: View Complete Fleet
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - heading "Why Choose RealRent ?" [level=2] [ref=e202]
+        - paragraph [ref=e203]: We're committed to providing an unparalleled car rental experience with premium service at every touchpoint.
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - img [ref=e207]
+          - heading "Premium Quality" [level=3] [ref=e209]
+          - paragraph [ref=e210]: Every vehicle undergoes comprehensive inspection and maintenance to guarantee your safety, comfort, and peace of mind.
+        - generic [ref=e211]:
+          - img [ref=e213]
+          - heading "24/7 Support" [level=3] [ref=e215]
+          - paragraph [ref=e216]: Our dedicated support team is available around the clock to assist you with any questions or concerns during your rental.
+        - generic [ref=e217]:
+          - img [ref=e219]
+          - heading "Best Value" [level=3] [ref=e221]
+          - paragraph [ref=e222]: Transparent pricing with no hidden fees. Get premium car rental services at competitive rates with exceptional value.
+  - contentinfo [ref=e223]:
+    - generic [ref=e224]:
+      - generic [ref=e225]:
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - img [ref=e229]
+            - generic [ref=e231]:
+              - heading "RentACar" [level=3] [ref=e232]
+              - paragraph [ref=e233]: PREMIUM CARS
+          - paragraph [ref=e234]: Premium car rental service providing luxury and reliable vehicles for all your transportation needs with exceptional customer service.
+        - generic [ref=e235]:
+          - heading "Services" [level=4] [ref=e236]
+          - list [ref=e237]:
+            - listitem [ref=e238]:
+              - link "Luxury Car Rental" [ref=e239] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e240]:
+              - link "Long Term Rental" [ref=e241] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e242]:
+              - link "Corporate Solutions" [ref=e243] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e244]:
+              - link "Airport Transfers" [ref=e245] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e246]:
+          - heading "Support" [level=4] [ref=e247]
+          - list [ref=e248]:
+            - listitem [ref=e249]:
+              - link "Contact Us" [ref=e250] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e251]:
+              - link "Help Center" [ref=e252] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e253]:
+              - link "Terms & Conditions" [ref=e254] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e255]:
+              - link "Privacy Policy" [ref=e256] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e257]:
+          - heading "Contact Info" [level=4] [ref=e258]
+          - generic [ref=e259]:
+            - generic [ref=e260]:
+              - img [ref=e261]
+              - generic [ref=e263]: +1 (555) 123-4567
+            - generic [ref=e264]:
+              - img [ref=e265]
+              - generic [ref=e267]: hello@realrent.com
+            - generic [ref=e268]:
+              - img [ref=e269]
+              - generic [ref=e272]: 123 Business Ave, City
+      - paragraph [ref=e274]: © 2025 RentACar. All rights reserved.
